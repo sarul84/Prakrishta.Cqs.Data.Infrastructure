@@ -4,7 +4,7 @@ The command query separation pattern is very simple, every method should either 
 
 Simply put: a query should never mutate state, while a command can mutate state but should never have a return value.
 
-This principle follows SOLID principle (SRP & OCP).
+This design pattern follows SOLID principle (SRP & OCP).
 
 The interfaces defined in "Query" folder has methods to read data from data store. (Can use EF or Dapper or any ORM tool for data retrieval from data store). You should implement "IQueryEntity" generic interface to define filter conditions and "IQueryHandler" generic interface to implement data querying operation.
 
