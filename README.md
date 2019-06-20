@@ -6,7 +6,7 @@
 
 ![Screenshot](CQS-QueryFlow.PNG)
 
-To add all implementation class at oneshot with scrutor
+To add all implementation class at oneshot using scrutor
 ```
 services.Scan(
       x =>
