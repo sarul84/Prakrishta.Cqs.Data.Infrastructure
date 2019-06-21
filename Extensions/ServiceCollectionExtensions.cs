@@ -1,6 +1,6 @@
 // -------------------------------------------------------------------------------
-// <copyright file="ServiceCollectionExtensions.cs" company="Mr. Cooper">
-//      Copyright © 2019 All Right Reserved
+// <copyright file="ServiceCollectionExtensions.cs" company="Prakrishta Technologies">
+//      Copyright © 2019 Prakrishta Technologies All Right Reserved
 // </copyright>
 // <Author>Arul Sengottaiyan</Author>
 // <date>6/21/2019</date>
