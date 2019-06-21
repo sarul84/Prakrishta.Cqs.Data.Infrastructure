@@ -37,6 +37,15 @@ services.Scan(
       });
 ```
 
+If you don't want to use scrutor, you can use extension methods that available with this library.
+
+```
+services.AddClassesAsImplementedInterface(assemblyName, typeof(ICommandHandler<>));
+services.AddClassesAsImplementedInterface(assemblyName, typeof(IQueryHandler<,>));
+services.AddClassesAsImplementedInterface(assemblyName, typeof(IAsyncQueryHandler<,>));
+services.AddClassesAsImplementedInterface(assemblyName, typeof(IAsyncCommandHandler<>));
+```
+
 ![Screenshot](CQS.PNG)
 
 ![Screenshot](CQS-CommandFlow.PNG)
