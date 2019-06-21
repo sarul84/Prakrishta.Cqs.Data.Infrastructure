@@ -33,17 +33,12 @@ namespace Prakrishta.Cqs.Data.Infrastructure
         /// <returns>The <see cref="List{TypeInfo}"/> that has implemented classes type info</returns>
         public static List<TypeInfo> GetTypesAssignableTo(this Assembly assembly, Type compareType)
         {
-            var typeInfoList = new List<TypeInfo>();
-            foreach (var type in assembly.DefinedTypes)
-            {
-                bool isAssignableTo = type.GetInterfaces()
+            var typeInfoList = assembly.DefinedTypes.Where(x => x.IsClass 
+                                && !x.IsAbstract 
+                                && x != compareType
+                                && x.GetInterfaces()
                                         .Any(i => i.IsGenericType
-                                                && i.GetGenericTypeDefinition() == compareType);
-                if (isAssignableTo && compareType != type)
-                {
-                    typeInfoList.Add(type);
-                }
-            }
+                                                && i.GetGenericTypeDefinition() == compareType))?.ToList();
 
             return typeInfoList;
         }
