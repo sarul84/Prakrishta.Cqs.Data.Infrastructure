@@ -6,9 +6,9 @@ Simply put: a query should never mutate state, while a command can mutate state 
 
 This design pattern follows SOLID principle (SRP & OCP).
 
-The interfaces defined in "Query" folder has methods to read data from data store. (Can use EF or Dapper or any ORM tool for data retrieval from data store). You should implement "IQueryEntity" generic interface to define filter conditions and "IQueryHandler" generic interface to implement data querying operation.
+The interfaces defined in the "Query" folder has methods to read data from the data store. (Can use EF or Dapper or any ORM tool for data retrieval from the data store). You should implement "IQueryEntity" generic interface to define filter conditions and "IQueryHandler" generic interface to implement data querying operation.
 
-The interfaces defined in command folder has methods to do operations that will mutate the data. As metioned above you can use any ORM tool (not both as you do in CQRS). You should implement "ICommandEntity" to send modified data to CommandHandler which will do the data modification operation. If you want to do any pre validation, you should implement "ICommandPreCondition" interface for that specific entity.
+The interfaces defined in the "Command" folder has methods to do operations that will mutate the data. As metioned above you can use any ORM tool (not both as you do in CQRS). You should implement "ICommandEntity" to send modified data to CommandHandler which will do the data modification operation. If you want to do any pre validation, you should implement "ICommandPreCondition" interface for that specific entity.
 
 The query processor and command dispatcher classes play the mediator role to find the correct query handler / command handler.
 
